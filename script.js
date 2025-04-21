@@ -42,14 +42,17 @@ function displayWeather(data) {
     hourlyForecastDiv.innerHTML = '';
     tempDivInfo.innerHTML = '';
 
-    if (data.cod === '404') {
+    if (data.cod === 404) {
         weatherInfoDiv.innerHTML = `<p>${data.message}</p>`;
-    } else {
+    } else if (data.cod === 200) {
         const cityName = data.name;
         const temperature = Math.round(data.main.temp - 273.15); // Convert to Celsius
         const description = data.weather[0].description;
         const iconCode = data.weather[0].icon;
         const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
+
+        // Debugging: log temperature and description
+        console.log(`Temperature: ${temperature}°C, Description: ${description}`);
 
         const temperatureHTML = `
             <p>${temperature}°C</p>
