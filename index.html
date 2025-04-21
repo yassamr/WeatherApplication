@@ -1,32 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Météo Moderne</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="weather-app">
-        <h1>Weather App</h1>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" placeholder="Entrez une ville" id="search-input">
+            <button id="search-button"><i class="fas fa-search"></i></button>
+        </div>
         
-        <div class="input-container">
-            <input type="text" id="city-input" placeholder="Enter city" />
-            <button onclick="getWeather()">Search</button>
-        </div>
-
-        <div id="weather-info" class="weather-info">
-            <div class="temperature">
-                <img id="weather-icon" src="" alt="Weather Icon">
-                <span id="temperature">°C</span>
+        <div class="weather-box">
+            <div class="weather-info hidden" id="weather-info">
+                <div class="location">
+                    <h2 id="city-name">Paris</h2>
+                    <span id="country">FR</span>
+                </div>
+                
+                <div class="main-weather">
+                    <img id="weather-icon" src="" alt="Icône météo">
+                    <h1 id="temperature">0°C</h1>
+                    <h3 id="description">Ensoleillé</h3>
+                </div>
+                
+                <div class="details">
+                    <div class="detail">
+                        <i class="fas fa-temperature-high"></i>
+                        <div>
+                            <p>Ressenti</p>
+                            <span id="feels-like">0°C</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <p>Vent</p>
+                            <span id="wind-speed">0 km/h</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <p>Humidité</p>
+                            <span id="humidity">0%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail">
+                        <i class="fas fa-compress-alt"></i>
+                        <div>
+                            <p>Pression</p>
+                            <span id="pressure">0 hPa</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="weather-description">Description</div>
+            
+            <div class="error-message" id="error-message">
+                <p>Ville non trouvée. Veuillez réessayer.</p>
+            </div>
+            
+            <div class="initial-message" id="initial-message">
+                <i class="fas fa-cloud-sun"></i>
+                <p>Recherchez une ville pour voir la météo</p>
+            </div>
         </div>
-
-        <div id="hourly-forecast" class="hourly-forecast">
-            <!-- Hourly forecast will be displayed here -->
+        
+        <div class="forecast" id="forecast">
+            <!-- Les prévisions seront ajoutées ici par JavaScript -->
         </div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
