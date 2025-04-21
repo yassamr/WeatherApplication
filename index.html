@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="weather-container">
-        <h2>Weather App</h2>
-        <input type="text" id="city" placeholder="Enter city">
-        <button onclick="getWeather()">Search</button>
+    <div class="weather-app">
+        <h1>Weather App</h1>
+        
+        <div class="input-container">
+            <input type="text" id="city-input" placeholder="Enter city" />
+            <button onclick="getWeather()">Search</button>
+        </div>
 
-        <img id="weather-icon" alt="Weather Icon">
+        <div id="weather-info" class="weather-info">
+            <div class="temperature">
+                <img id="weather-icon" src="" alt="Weather Icon">
+                <span id="temperature">°C</span>
+            </div>
+            <div id="weather-description">Description</div>
+        </div>
 
-        <div id="temp-div"></div>
-
-        <div id="weather-info"></div>
-
-        <div id="hourly-forecast"></div>
+        <div id="hourly-forecast" class="hourly-forecast">
+            <!-- Hourly forecast will be displayed here -->
+        </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
