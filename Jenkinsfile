@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         INSTANCE_IP = '192.168.1.74' // IP publique de weather-instance2
-        WEB_ROOT = '/var/www/html' // Dossier cible sur l'instance
+        WEB_ROOT = '/var/www/html' // Dossier cible sur l'instanc
     }
     stages {
         stage('Clone Repository') {
